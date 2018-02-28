@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "lastPoster",
+            "otherEntityName": "forumPost",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "userId"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "lastPostTS",
+            "otherEntityName": "forumPost",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "ts"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "forumPost",
+            "otherEntityName": "forumPost",
+            "otherEntityRelationshipName": "topic"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "forum",
+            "otherEntityName": "forum",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "forum",
+            "fieldType": "Forum"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastPoster",
+            "fieldType": "Host"
+        },
+        {
+            "fieldName": "lastPostTS",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "Host"
+        }
+    ],
+    "changelogDate": "20180228210236",
+    "entityTableName": "topic",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "c"
+}
