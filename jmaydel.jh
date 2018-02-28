@@ -1,0 +1,89 @@
+entity Accomodation {
+	name String
+    address String
+    city String
+    zipCode String
+    capacity Integer
+    link1 String
+    link2 String
+    link3 String
+    areaM2 Integer
+    host Host
+}
+
+entity Host {
+	name String
+	firstContactName String
+    lastContactName String
+    address String
+    city String
+    phone1 String
+    phone2 String
+    phone3 String
+    email String
+    username String
+    password String
+}
+
+entity Content {
+	accomodation Accomodation
+	contentName String
+	editorContent String
+}
+
+entity Forum {
+	name String
+    description String
+}
+
+entity Topic {
+	forum Forum
+	name String
+    lastPoster Host
+    lastPostTS Instant
+    user Host
+}
+
+entity ForumPost {
+	content String
+    topic Topic
+    userId Host
+    ts Instant
+}
+
+relationship OneToMany {
+	Topic to ForumPost{topic}
+}
+
+relationship OneToMany {
+	Forum to Topic{forum}
+}
+
+relationship OneToMany {
+	Accomodation to Content{accomodation}
+}
+
+relationship OneToMany {
+	Host to Accomodation{host}
+}
+
+relationship OneToOne {
+	Topic{lastPoster} to ForumPost{userId}
+}
+
+relationship OneToOne {
+	Topic{lastPostTS} to ForumPost{ts}
+}
+
+// Set pagination options
+paginate Accomodation with infinite-scroll
+paginate Content with pagination
+paginate Topic with infinite-scroll
+paginate ForumPost with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with c
