@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "userId",
+            "otherEntityName": "topic",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "lastPoster"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ts",
+            "otherEntityName": "topic",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "lastPostTS"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "topic",
+            "otherEntityName": "topic",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "topic",
+            "fieldType": "Topic"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Host"
+        },
+        {
+            "fieldName": "ts",
+            "fieldType": "Instant"
+        }
+    ],
+    "changelogDate": "20180228210237",
+    "entityTableName": "forum_post",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "c"
+}

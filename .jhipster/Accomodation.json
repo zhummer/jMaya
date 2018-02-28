@@ -1,0 +1,66 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "content",
+            "otherEntityName": "content",
+            "otherEntityRelationshipName": "accomodation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "host",
+            "otherEntityName": "host",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capacity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "link1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "link2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "link3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "areaM2",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "host",
+            "fieldType": "Host"
+        }
+    ],
+    "changelogDate": "20180228210232",
+    "entityTableName": "accomodation",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "c"
+}
