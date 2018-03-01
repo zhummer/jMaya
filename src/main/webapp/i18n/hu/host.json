@@ -1,0 +1,34 @@
+
+{
+    "jMayaApp": {
+        "host" : {
+            "home": {
+                "title": "Hosts",
+                "createLabel": "Egy új Host létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Hostt",
+                "search": "Host keresése"
+            },
+            "created": "Egy új Host lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Host módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Host törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Hostt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Host"
+            },
+            "name": "Name",
+            "firstContactName": "First Contact Name",
+            "lastContactName": "Last Contact Name",
+            "address": "Address",
+            "city": "City",
+            "phone1": "Phone 1",
+            "phone2": "Phone 2",
+            "phone3": "Phone 3",
+            "email": "Email",
+            "username": "Username",
+            "password": "Password",
+            "accomodation": "Accomodation"
+        }
+    }
+}

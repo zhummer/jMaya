@@ -45,7 +45,7 @@
         },
         {
             "fieldName": "lastPostTS",
-            "fieldType": "Instant"
+            "fieldType": "Timestamp"
         },
         {
             "fieldName": "user",

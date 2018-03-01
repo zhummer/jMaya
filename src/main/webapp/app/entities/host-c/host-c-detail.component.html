@@ -1,0 +1,66 @@
+
+<div *ngIf="host">
+    <h2><span jhiTranslate="jMayaApp.host.detail.title">Host</span> {{host.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jMayaApp.host.name">Name</span></dt>
+        <dd>
+            <span>{{host.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.firstContactName">First Contact Name</span></dt>
+        <dd>
+            <span>{{host.firstContactName}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.lastContactName">Last Contact Name</span></dt>
+        <dd>
+            <span>{{host.lastContactName}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.address">Address</span></dt>
+        <dd>
+            <span>{{host.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.city">City</span></dt>
+        <dd>
+            <span>{{host.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.phone1">Phone 1</span></dt>
+        <dd>
+            <span>{{host.phone1}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.phone2">Phone 2</span></dt>
+        <dd>
+            <span>{{host.phone2}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.phone3">Phone 3</span></dt>
+        <dd>
+            <span>{{host.phone3}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.email">Email</span></dt>
+        <dd>
+            <span>{{host.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.username">Username</span></dt>
+        <dd>
+            <span>{{host.username}}</span>
+        </dd>
+        <dt><span jhiTranslate="jMayaApp.host.password">Password</span></dt>
+        <dd>
+            <span>{{host.password}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'host-c/'+ host.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

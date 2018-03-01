@@ -32,12 +32,12 @@
             "fieldType": "Topic"
         },
         {
-            "fieldName": "userId",
+            "fieldName": "user",
             "fieldType": "Host"
         },
         {
             "fieldName": "ts",
-            "fieldType": "Instant"
+            "fieldType": "Timestamp"
         }
     ],
     "changelogDate": "20180228210237",

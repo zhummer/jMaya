@@ -1,0 +1,25 @@
+
+{
+    "jMayaApp": {
+        "forum" : {
+            "home": {
+                "title": "Forums",
+                "createLabel": "Egy új Forum létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Forumt",
+                "search": "Forum keresése"
+            },
+            "created": "Egy új Forum lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Forum módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Forum törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Forumt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Forum"
+            },
+            "name": "Name",
+            "description": "Description",
+            "topic": "Topic"
+        }
+    }
+}

@@ -40,15 +40,15 @@ entity Topic {
 	forum Forum
 	name String
     lastPoster Host
-    lastPostTS Instant
+    lastPostTS Timestamp
     user Host
 }
 
 entity ForumPost {
 	content String
     topic Topic
-    userId Host
-    ts Instant
+    user Host
+    ts Timestamp
 }
 
 relationship OneToMany {

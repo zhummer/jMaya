@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="jMayaApp.host.home.title">Hosts</span>
+        <button class="btn btn-primary float-right jh-create-entity create-host-c" [routerLink]="['/', { outlets: { popup: ['host-c-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="jMayaApp.host.home.createLabel">
+            Create new Host
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'jMayaApp.host.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="hosts">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="jMayaApp.host.name">Name</span></th>
+            <th><span jhiTranslate="jMayaApp.host.firstContactName">First Contact Name</span></th>
+            <th><span jhiTranslate="jMayaApp.host.lastContactName">Last Contact Name</span></th>
+            <th><span jhiTranslate="jMayaApp.host.address">Address</span></th>
+            <th><span jhiTranslate="jMayaApp.host.city">City</span></th>
+            <th><span jhiTranslate="jMayaApp.host.phone1">Phone 1</span></th>
+            <th><span jhiTranslate="jMayaApp.host.phone2">Phone 2</span></th>
+            <th><span jhiTranslate="jMayaApp.host.phone3">Phone 3</span></th>
+            <th><span jhiTranslate="jMayaApp.host.email">Email</span></th>
+            <th><span jhiTranslate="jMayaApp.host.username">Username</span></th>
+            <th><span jhiTranslate="jMayaApp.host.password">Password</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let host of hosts ;trackBy: trackId">
+                <td><a [routerLink]="['../host-c', host.id ]">{{host.id}}</a></td>
+                <td>{{host.name}}</td>
+                <td>{{host.firstContactName}}</td>
+                <td>{{host.lastContactName}}</td>
+                <td>{{host.address}}</td>
+                <td>{{host.city}}</td>
+                <td>{{host.phone1}}</td>
+                <td>{{host.phone2}}</td>
+                <td>{{host.phone3}}</td>
+                <td>{{host.email}}</td>
+                <td>{{host.username}}</td>
+                <td>{{host.password}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../host-c', host.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'host-c/'+ host.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'host-c/'+ host.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

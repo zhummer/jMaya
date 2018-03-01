@@ -1,0 +1,80 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myHostLabel" jhiTranslate="jMayaApp.host.home.createOrEditLabel">Create or edit a Host</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!host.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="host.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="host.name" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.firstContactName" for="field_firstContactName">First Contact Name</label>
+            <input type="text" class="form-control" name="firstContactName" id="field_firstContactName"
+                [(ngModel)]="host.firstContactName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.lastContactName" for="field_lastContactName">Last Contact Name</label>
+            <input type="text" class="form-control" name="lastContactName" id="field_lastContactName"
+                [(ngModel)]="host.lastContactName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                [(ngModel)]="host.address" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="host.city" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.phone1" for="field_phone1">Phone 1</label>
+            <input type="text" class="form-control" name="phone1" id="field_phone1"
+                [(ngModel)]="host.phone1" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.phone2" for="field_phone2">Phone 2</label>
+            <input type="text" class="form-control" name="phone2" id="field_phone2"
+                [(ngModel)]="host.phone2" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.phone3" for="field_phone3">Phone 3</label>
+            <input type="text" class="form-control" name="phone3" id="field_phone3"
+                [(ngModel)]="host.phone3" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                [(ngModel)]="host.email" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.username" for="field_username">Username</label>
+            <input type="text" class="form-control" name="username" id="field_username"
+                [(ngModel)]="host.username" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="jMayaApp.host.password" for="field_password">Password</label>
+            <input type="text" class="form-control" name="password" id="field_password"
+                [(ngModel)]="host.password" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
